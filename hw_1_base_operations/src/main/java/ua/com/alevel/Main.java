@@ -24,8 +24,8 @@ public class Main {
                     break;
 
                 case 3:
-                    Lesson lesson = new Lesson();
-                    lesson.endLesson();
+                    SchoolLesson schoolLesson = new SchoolLesson();
+                    schoolLesson.endLesson();
                     System.out.println("Select task number or click on 0 for exit");
                     break;
 

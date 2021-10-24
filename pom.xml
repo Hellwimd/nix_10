@@ -21,7 +21,6 @@
     </build>
     <modules>
         <module>hw_1_base_operations</module>
-        <module>hw_1_base_operations</module>
     </modules>
     <packaging>pom</packaging>
 

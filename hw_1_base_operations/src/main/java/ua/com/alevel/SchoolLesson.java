@@ -2,7 +2,7 @@ package ua.com.alevel;
 
 import java.util.Scanner;
 
-public class Lesson {
+public class SchoolLesson {
 
     private static final int Hour = 60;
 
