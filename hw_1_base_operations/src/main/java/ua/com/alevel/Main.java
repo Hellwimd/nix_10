@@ -33,7 +33,7 @@ public class Main {
                     System.exit(0);
 
                 default:
-                    System.out.println("Not valid task number");
+                    System.out.println("Not valid task number, please try again");
             }
         }
 
