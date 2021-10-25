@@ -1,7 +1,8 @@
 package ua.com.alevel;
-import java.util.Scanner;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class CharCount {
 
@@ -11,9 +12,9 @@ public class CharCount {
         String input = scan.nextLine();
         String letter;
         int[] quantity = new int[input.length()];
-        HashMap<String,Integer > map = new HashMap<>();
+        HashMap<String, Integer> map = new HashMap<>();
         for (int i = 0; i < input.length(); i++) {
-            if(Character.isLetter(input.charAt(i))){
+            if (Character.isLetter(input.charAt(i))) {
                 letter = String.valueOf(input.charAt(i));
                 for (int j = 0; j < input.length(); j++) {
                     if (letter.equals(String.valueOf(input.charAt(j)))) {
@@ -23,7 +24,7 @@ public class CharCount {
                 map.put(letter, quantity[i]);
             }
         }
-        for (Map.Entry<String,Integer> entry : map.entrySet()) {
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
         }
     }
