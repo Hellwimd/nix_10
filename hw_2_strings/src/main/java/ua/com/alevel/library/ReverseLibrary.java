@@ -22,12 +22,12 @@ public final class ReverseLibrary {
         }
     }
 
-    public static String reverseByFirstAndLastIndexes(String string, int firstIndex, int lastIndex) {
-        StringBuilder substring = new StringBuilder(string.length());
+    public static String reverseByFirstAndLastIndexes(String input, int firstIndex, int lastIndex) {
+        StringBuilder substring = new StringBuilder(input.length());
         for (int i = firstIndex; i <= lastIndex; i++) {
-            substring.append(string.charAt(i));
+            substring.append(input.charAt(i));
         }
-        return string.replaceAll(substring.toString(), reverse(substring.toString()));
+        return input.replaceAll(substring.toString(), reverse(substring.toString()));
     }
 }
 
