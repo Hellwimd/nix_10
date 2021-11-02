@@ -3,6 +3,7 @@ package ua.com.alevel.level_2;
 import java.util.Scanner;
 
 public class BinaryTree {
+
     static final int COUNT = 10;
     static Scanner scanner = new Scanner(System.in);
 
