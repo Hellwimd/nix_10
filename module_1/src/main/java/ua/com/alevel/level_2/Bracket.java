@@ -3,6 +3,7 @@ package ua.com.alevel.level_2;
 import java.util.Stack;
 
 public class Bracket {
+
     private final char openBracket;
     private final char closeBracket;
     private boolean flagOpenBracket = false;
