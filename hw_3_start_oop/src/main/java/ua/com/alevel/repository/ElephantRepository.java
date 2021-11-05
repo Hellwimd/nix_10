@@ -5,6 +5,7 @@ import ua.com.alevel.entity.Elephant;
 import java.util.Arrays;
 
 public class ElephantRepository {
+
     private Elephant[] elephants;
 
     public ElephantRepository() {
@@ -53,7 +54,6 @@ public class ElephantRepository {
             }
         }
         System.out.println("Elephant by id " + id + " not found");
-        ;
         return null;
     }
 
@@ -83,5 +83,9 @@ public class ElephantRepository {
         }
 
         elephants = Arrays.copyOf(elephants, newArrayLength);
+    }
+
+    public void deleteAll() {
+        elephants = new Elephant[0];
     }
 }

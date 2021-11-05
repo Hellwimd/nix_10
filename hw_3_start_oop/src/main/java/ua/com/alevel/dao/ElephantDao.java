@@ -26,4 +26,8 @@ public class ElephantDao {
     public Elephant[] findAll() {
         return elephantRepository.findAll();
     }
+
+    public void deleteAll() {
+        elephantRepository.deleteAll();
+    }
 }

@@ -12,4 +12,6 @@ public interface ElephantService {
     Elephant findById(Long id);
 
     Elephant[] findAll();
+
+    void deleteAll();
 }

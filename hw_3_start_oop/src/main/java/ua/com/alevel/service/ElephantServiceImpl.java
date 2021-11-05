@@ -28,4 +28,8 @@ public class ElephantServiceImpl implements ElephantService {
     public Elephant[] findAll() {
         return elephantDao.findAll();
     }
+
+    public void deleteAll() {
+        elephantDao.deleteAll();
+    }
 }

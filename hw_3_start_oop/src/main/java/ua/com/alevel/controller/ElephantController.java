@@ -36,6 +36,7 @@ public class ElephantController {
         System.out.println(" - if you want to delete Elephant, please enter 3");
         System.out.println(" - if you want to findById Elephant, please enter 4");
         System.out.println(" - if you want to findAll Elephants, please enter 5");
+        System.out.println(" - if you want to deleteAll Elephants, please enter 6");
         System.out.println(" - if you want to exit, please enter 0");
         System.out.println();
     }
@@ -57,13 +58,15 @@ public class ElephantController {
             case 5:
                 findAll();
                 break;
+            case 6:
+                deleteALL();
+                break;
             case 0:
                 System.exit(0);
                 break;
 
         }
-        System.out.println("*********************************************");
-        System.out.println("Choose an option, or enter 0 for exit program");
+        runNavigation();
     }
 
     private void create() {
@@ -91,6 +94,9 @@ public class ElephantController {
         try {
             System.out.println("Please, enter Elephant id to update");
             Long id = scanner.nextLong();
+            if (elephantServiceImpl.findById(id) == null) {
+                return;
+            }
             System.out.println("Please, enter new Elephant name");
             scanner = new Scanner(System.in);
             String name = scanner.nextLine();
@@ -113,29 +119,49 @@ public class ElephantController {
     }
 
     private void delete() {
-        System.out.println("Please, enter id");
-        Long id = scanner.nextLong();
-
-        elephantServiceImpl.delete(id);
-        System.out.println("Elephant at " + id + " id successfully deleted");
+        try {
+            System.out.println("Please, enter id");
+            Long id = scanner.nextLong();
+            elephantServiceImpl.delete(id);
+            System.out.println("Elephant at " + id + " id successfully deleted");
+        } catch (InputMismatchException ex) {
+            System.out.println("invalid value, please try again");
+        }
     }
 
     private void findById() {
-        System.out.println("Please, enter Elephant id");
-        Long id = scanner.nextLong();
+        try {
+            System.out.println("Please, enter Elephant id");
+            Long id = scanner.nextLong();
 
-        Elephant elephant = elephantServiceImpl.findById(id);
-        System.out.println("Elephant = " + elephant);
+            Elephant elephant = elephantServiceImpl.findById(id);
+            System.out.println("Elephant = " + elephant);
+        } catch (InputMismatchException ex) {
+            System.out.println("invalid value, please try again");
+        }
     }
 
     private void findAll() {
-        Elephant[] elephants = elephantServiceImpl.findAll();
-        if (elephants != null && elephants.length != 0) {
-            for (Elephant elephant : elephants) {
-                System.out.println(elephant);
+        try {
+            Elephant[] elephants = elephantServiceImpl.findAll();
+            if (elephants.length != 0) {
+                for (Elephant elephant : elephants) {
+                    if (elephant != null) {
+                        System.out.println(elephant);
+                    } else {
+                        System.out.println("Elephants not found");
+                    }
+                }
+            } else {
+                System.out.println("Elephants not found");
             }
-        } else {
-            System.out.println("Elephants not found");
+        } catch (InputMismatchException ex) {
+            System.out.println("invalid value, please try again");
         }
+    }
+
+    private void deleteALL() {
+        elephantServiceImpl.deleteAll();
+        System.out.println("All elephants successfully deleted");
     }
 }
