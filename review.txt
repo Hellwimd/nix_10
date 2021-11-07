@@ -10,3 +10,7 @@ module_1 = 7
 
 ну с юзер френдли все оч не оч)
 сложно твоей программой пользоваться
+
+hw_3 = 8
+
+ua/com/alevel/repository/ElephantRepository.java:12 - ну что за упрямство, мы уже и на ArraysList успели посмотреть
