@@ -1,6 +1,7 @@
 package ua.com.alevel.entity;
 
 public class Elephant {
+
     private Long id;
     private String name;
     private int weight;
